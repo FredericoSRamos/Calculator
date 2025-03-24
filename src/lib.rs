@@ -63,6 +63,11 @@ impl MyApp {
     }
 
     fn handle_button_click(&mut self, c: char) {
+        if self.clear {
+            self.input.clear();
+            self.clear = false;
+        }
+        
         if self.can_add_char(self.input.chars().last(), c) {
             self.add_char(c);
         }
